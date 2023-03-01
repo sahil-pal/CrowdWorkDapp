@@ -1,0 +1,609 @@
+/* Global Settings */
+@font-face {
+  font-family: 'epilogueitalic';
+  src: url('../fonts/epilogue-italic-variablefont_wght-webfont.woff2') format('woff2'),
+       url('../fonts/epilogue-italic-variablefont_wght-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'epilogueregular';
+  src: url('../fonts/epilogue-variablefont_wght-webfont.woff2') format('woff2'),
+       url('../fonts/epilogue-variablefont_wght-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'montserratthin_italic';
+  src: url('../fonts/montserrat-italic-variablefont_wght-webfont.woff2') format('woff2'),
+       url('../fonts/montserrat-italic-variablefont_wght-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'montserratthin';
+  src: url('../fonts/montserrat-variablefont_wght-webfont.woff2') format('woff2'),
+       url('../fonts/montserrat-variablefont_wght-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'pacificoregular';
+  src: url('../fonts/pacifico-regular-webfont.woff2') format('woff2'),
+       url('../fonts/pacifico-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+:root{
+  --body-bg-dark : #131319;
+  --dojima-purple : #8451CF;
+  --dojima-purple-dark : #813ce9;
+  --logo-green : #4ACD8D;
+  --light-black : #1C1C23;
+  --content-gray : #4B5363;
+  --text-gray : #585966;
+}
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  color: #ffffff;
+  outline:none;
+  border: none;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+body{
+  background-color: var(--body-bg-dark);
+  font-family: epilogueregular;
+}
+
+/* Helper classes */
+.row{
+  display: flex;
+}
+.flex-col{
+  display: flex;
+  flex-direction: column;
+}
+.align-item-center{
+  align-items: center;
+}
+.justify-start{
+  justify-content: flex-start;
+}
+.space-between{
+  justify-content: space-between;
+}
+.space-around{
+  justify-content: space-around;
+}
+.justify-center{
+  justify-content: center;
+}
+.justify-end{
+  justify-content: flex-end;
+}
+.grid{
+  display: grid;
+}
+.w-100{
+  width: 100%;
+}
+.text-center{
+  text-align: center;
+}
+.content-gray{
+  color: var(--body-bg-dark);
+  font-weight: 600;
+}
+.content-black{
+  color: var(--body-bg-dark);
+}
+.content-green{
+  color: var(--logo-green);
+  font-weight: 800;
+}
+.col{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Generic */
+
+.container{
+  width: 1200px;
+  margin: 0px auto;
+}
+.toast-message-success,
+.toast-message-error{
+  display: flex;
+  box-shadow: inset 0 0 15px #000000;
+  justify-content: center;
+  font-size: 18px;
+  margin: 2px auto;
+  width: 60vw;
+  height: 5vh;
+  padding: 8px 0px;
+  border-radius: 15px;
+}
+.toast-message-error{
+  background-color: red;
+}
+.toast-message-success{
+  background-color: var(--logo-green);
+}
+.page-heading{
+  height: 50px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--content-gray);
+  margin-bottom: 5vh;
+}
+main #loader{
+  margin: 15% auto;
+  display: flex;
+  padding: 5px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* background-color: var(--text-gray); */
+  width: 300px;
+  height: 150px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-family: epilogueregular;
+}
+main #loader-text{
+  font-size: 1em;
+}
+
+/* Header */
+header{
+  margin-top: 15px;
+}
+header .app-logo{
+  width: 14%;
+}
+header .search-bar{
+  background-color: var(--light-black);
+  width: 50%;
+  height: 54px;
+  display: flex;
+  margin-top: 0.8%;
+  align-items: center;
+  border-radius: 100px;
+}
+header .user-links{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 25%;
+}
+header .app-logo h1{
+  font-family: pacificoregular !important;
+  font-size: 28px;
+  border-radius: 5px;
+  padding: 4px;
+  background-color: var(--logo-green);
+}
+header .app-logo span{
+  background-color: #ffffff;
+  width: 80%;
+  font-size: 12px;
+  padding: 2px;
+  font-weight: bold;
+  margin: -10px auto 0px;
+  border-radius: 2px;
+  color: var(--dojima-purple);
+}
+header .search-bar form{
+  margin-left:5%;
+  width: 90%;
+}
+header .search-bar input{
+  background-color: var(--light-black);
+  border-width: 0px;
+  height: 90%;
+  padding: 10px;
+  width: 84%;
+  font-size: 18px;
+  font-family: epilogueregular;
+}
+header .search-bar ::placeholder{
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: var(--content-gray);
+  font-family: epilogueregular;
+}
+header .search-bar .submit-btn{
+  background-color: var(--logo-green);
+  width: 14%;
+  height: 80%;
+  margin-right: 2%;
+  border-radius: 20px;
+  font-size: 18px;
+}
+header .user-links button{
+  height: 70%;
+  width: 70%;
+  border-radius: 50px;
+  font-size: 14px;
+  padding: 0px 10px;
+  font-family: epilogueregular;
+  background-color: var(--dojima-purple);
+}
+header .user-links button:hover{
+  background-color: var(--dojima-purple-dark);
+}
+header .user-links button i{
+  font-size: 20px;
+  margin-left: 10px;
+}
+header .user-links img{
+  margin: 20% 0% 0% 25%;
+}
+header .user-links .user-icon{
+  background-color: var(--light-black);
+  border-radius: 50%;
+  height: 80%;
+  width: 20%;
+}
+.error-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  font-size: 2.5rem;
+  padding: 10px;
+  margin: 10% auto;
+}
+.error-box a{
+  text-decoration: underline;
+  font-size: 0.5em;
+  border: 1px solid black;
+  background-color: var(--dojima-purple);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+/* Main */
+main{
+  margin-top: 3%;
+}
+main .side-menu{
+  box-shadow: inset 0 0 10px #000000;
+  width: 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0px auto;
+  height: 75vh;
+  background-color: var(--light-black);
+  padding: 30px 2px;
+  border-radius: 20px;
+}
+main .homepage{
+  box-shadow: inset 0 0 10px #000000;
+  width: 80%;
+  margin: 0px auto;
+  background-color: var(--light-black);
+  border-radius: 30px;
+  padding: 30px;
+}
+
+/* SideMenu */
+main .side-menu .user-menus{
+  height: 72%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--content-gray);
+}
+main .side-menu .logout-btn{
+  height: 12%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+main .side-menu img{
+  width: 25px;
+  object-fit: contain;
+}
+main .side-menu .active{
+  background-color: var(--content-gray);
+  border-radius: 30px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Create Compaign Page */
+main .create-campaign form label{
+  color: #585966;
+}
+main .create-campaign form{
+  margin: 10px;
+}
+main .create-campaign form .row:first-child,
+main .create-campaign form .row:last-child{
+  width: 100%;
+}
+main .create-campaign form .row{
+  justify-content: space-between;
+}
+main .create-campaign form label{
+  padding: 10px;
+  margin: 3px 0px;
+}
+main .create-campaign form input,
+main .create-campaign form textarea{
+  padding: 10px;
+  margin: 4px 0px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: epilogueregular;
+  color: var(--body-bg-dark);
+}
+main .create-campaign form .row input{
+  width: 30vw;
+}
+main .create-campaign .row button{
+  margin: 0px auto 10px;
+  height: 6vh;
+  width: 20vw;
+  background-color: var(--logo-green);
+  border-radius: 20px;
+  font-size: 16px;
+  font-family: epilogueregular;
+}
+
+/* All Campaigns Page */
+main .all-campaigns{
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+@media only screen and (max-width: 450px) {
+  main .all-campaigns{
+    display: grid;
+    grid-template-columns: 40% 40%;
+  }
+}
+@media only screen and (max-width: 310px) {
+  main .all-campaigns{
+    display: grid;
+    grid-template-columns: 50%;
+  }
+}
+main .all-campaigns .campaign-card{
+  margin: 2vh auto;
+  width: 95%;
+  height: 86%;
+  background-color: #d5cfcfcf;
+  border-radius: 2vh;
+}
+main .all-campaigns .campaign-card .campaign-img{
+  width: 100%;
+  height: 45%;
+  border-top-right-radius: 2vh;
+  border-top-left-radius: 2vh;
+}
+main .all-campaigns .campaign-card img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 2vh;
+  border-top-left-radius: 2vh;
+}
+main .all-campaigns .campaign-card .campaign-details{
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+  /* background-color: #ffffff; */
+  height: 55%;
+  justify-content: space-between;
+  margin: 0px 6px;
+}
+main .all-campaigns .campaign-card .campaign-details .campaign-title{
+  font-size: 18px;
+}
+.heading-green:hover{
+  color: var(--dojima-purple-dark);
+}
+main .all-campaigns .campaign-card .campaign-details .campaign-desc{
+  font-size: 12px;
+}
+main .all-campaigns .campaign-card .campaign-details .fund-details h5,
+main .all-campaigns .campaign-card .campaign-details .time-details h5{
+  font-size: 18px;
+  font-weight: bolder;
+}
+main .all-campaigns .campaign-card .campaign-details .fund-details p,
+main .all-campaigns .campaign-card .campaign-details .time-details p
+{
+  font-size: 10px;
+}
+main .all-campaigns .campaign-card .campaign-details .user-avatar img{
+  width: 15%;
+  border-radius: 50%;
+}
+
+/* FAQs Page */
+main .faq-container{
+  width: 100%;
+  padding: 10px;
+}
+main .faq-container .question-text{
+  font-size: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  height: 30%;
+  margin: 15px auto;
+  background-color: var(--content-gray);
+  border-bottom: 5px solid var(--body-bg-dark);
+}
+main .faq-container .question-text svg{
+  width: 30px;
+}
+main .faq-container .answer-tab{
+  width: 95%;
+  margin: 15px auto;
+  padding: 5px;
+  color: var(--dojima-purple);
+}
+
+/* Campaign Details */
+main .campaign-details{
+  padding: 5px 5px;
+  margin: 10px 0px;
+}
+main .campaign-details .campaign-header{
+  padding: 5px 5px;
+  margin: 5px 0px;
+  width: 95%;
+}
+main .campaign-details .campaign-header img{
+  width: 75%;
+  height: 45%;
+  object-fit: contain;
+  border-radius: 15px;
+}
+main .campaign-details .campaign-header .stats-area{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main .campaign-details .campaign-header .stats-area .stats-box{
+  padding: 15px;
+  margin: 5px 5px;
+}
+main .campaign-details .campaign-header .stats-area .stats-box h3{
+  font-size: 3.4em;
+  background-color: var(--content-gray);
+  text-align: center;
+}
+main .campaign-details .campaign-header .stats-area .stats-box p{
+  font-size: 1em;
+  padding: 5px;
+  text-align: center;
+  background-color: #000000;
+}
+main .campaign-details .progress-bar{
+  width: 100%;
+  border: 1px solid var(--logo-green);
+  height: 15px;
+  border-radius: 2px;
+}
+main .campaign-details .progress-bar .progress{
+  height: 13px;
+}
+main .campaign-details .campaign-info{
+  width: 50%;
+  margin: 10px 0px;
+  padding: 10px 0px;
+}
+main .campaign-details .campaign-info h3{
+  margin: 5px 0px;
+}
+main .campaign-details .campaign-info .user-details,
+main .campaign-details .campaign-info .donation-list{
+  margin: 20px 0px;
+}
+
+main .campaign-details .side-box{
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 10px 0px;
+  padding: 10px;
+  background-color: var(--content-gray);
+  border-radius: 10px;
+}
+main .campaign-details .donation-box,
+main .campaign-details .withdrawl-box{
+  border-bottom: 2px solid var(--body-bg-dark);
+  padding: 25px 0px;
+}
+main .campaign-details input{
+  width: 80%;
+  padding: 10px;
+  height: 40px;
+  border-radius: 10px;
+  margin: 10px auto;
+  color: #000000;
+  font-family: epilogueregular;
+}
+main .campaign-details button{
+  width: 80%;
+  text-align: center;
+  margin: 5px auto;
+  height: 40px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  background-color: var(--dojima-purple);
+  font-size: 20px;
+  font-family: epilogueregular;
+}
+main .campaign-details .verify-btn{
+  background-color: var(--logo-green);
+  animation: glowing-button 1300ms infinite;
+  text-transform: none;
+}
+main .campaign-details .nft-box img{
+  margin: 5px 0px;
+  height: 200px;
+  object-fit: contain;
+}
+main .campaign-details .donation-list .donation-list-box{
+  margin: 5px 0px;
+  background-color: var(--text-gray);
+  border-bottom: 5px solid var(--body-bg-dark);
+  padding: 4px;
+}
+
+
+/* Footer */
+footer{
+  margin: 2% 0px;
+}
+footer i {
+  color: red;
+}
+footer img{
+  display: inline-block;
+  width: 1.8%;
+  margin: 0px 2px;
+}
+
+/* Animation */
+@keyframes glowing-button{
+  0% {
+    background-color: var(--logo-green);
+    box-shadow: 0 0 10px #2ba805;
+  }
+  50% {
+    background-color:var(--logo-green);
+    box-shadow: 0 0 20px #49e819;
+  }
+  100% {
+    background-color: var(--logo-green);
+    box-shadow: 0 0 10px #2ba805;
+  }
+}
