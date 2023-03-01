@@ -1,0 +1,32 @@
+{
+  "name": "genesis-contracts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.mjs",
+  "scripts": {
+    "start": "nodemon src/app.mjs",
+    "testconsole": "truffle console -p 8545 --networkId 1001",
+    "testrpc": "ganache-cli -p 8545 --networkId 1001 --mnemonic 'clock radar mass judge dismiss just intact mind resemble fringe diary casino' --gasLimit 13000000",
+    "truffle": "truffle",
+    "truffle:test": "truffle test",
+    "truffle:compile": "truffle compile",
+    "truffle:migrate": "truffle migrate",
+    "test": "truffle test",
+    "test:ci": "bash scripts/run-test.sh",
+    "lint": "npm run lint:sol && npm run lint:js",
+    "lint:js": "eslint test/**/*.js",
+    "lint:sol:fix": "solium -d contracts/ --fix",
+    "lint:sol": "solium -d contracts/"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.7.3",
+    "@truffle/hdwallet-provider": "^2.1.0",
+    "dotenv": "^16.0.3",
+    "openzeppelin-solidity": "2.2.0",
+    "solidity-rlp": "^2.0.0",
+    "truffle": "^5.5.28",
+    "truffle-contract": "^4.0.31"
+  }
+}
