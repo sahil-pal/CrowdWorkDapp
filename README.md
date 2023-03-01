@@ -1,4 +1,4 @@
-**<h2>CrowdFunding Dapp</h2>**
+**<h1>CrowdFunding Dapp</h1>**
 
 ##### Live URL : https://CrowdWorkDapp.sahilpal2.repl.co
 
